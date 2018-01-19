@@ -11,9 +11,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>plugin-json-assembly-parent</artifactId>
-        <groupId>archetype.it</groupId>
-        <version>0.1-SNAPSHOT</version>
+        <artifactId>che-json-sample-assembly-parent</artifactId>
+        <groupId>org.eclipse.che.sample</groupId>
+        <version>6.0.0-M5-SNAPSHOT</version>
     </parent>
     <artifactId>assembly-ide-war</artifactId>
     <packaging>war</packaging>
@@ -37,7 +37,7 @@
             <type>gwt-lib</type>
         </dependency>
         <dependency>
-            <groupId>archetype.it</groupId>
+            <groupId>org.eclipse.che.sample</groupId>
             <artifactId>plugin-json-ide</artifactId>
             <type>gwt-lib</type>
         </dependency>
@@ -45,7 +45,6 @@
             <groupId>org.eclipse.che</groupId>
             <artifactId>assembly-ide-war</artifactId>
             <type>war</type>
-            <scope>runtime</scope>
         </dependency>
     </dependencies>
     <build>
@@ -183,11 +182,10 @@
                                 <include>META-INF/context.xml</include>
                                 <include>WEB-INF/rewrite.config</include>
                                 <include>WEB-INF/web.xml</include>
-                                <include>WEB-INF/classes/org/eclipse/che/*.class</include>
+                                <include>WEB-INF/classes/**</include>
                                 <include>WEB-INF/lib/</include>
                             </includes>
                         </overlay>
-                        <overlay></overlay>
                     </overlays>
                 </configuration>
             </plugin>
